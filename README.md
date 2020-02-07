@@ -46,8 +46,8 @@ Things you may want to cover:
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-|message|text|not null|
-|image|text||not null|
+|message|text||
+|image|text||
 ### Association
 - belongs_to :user
 - belongs_to :group
