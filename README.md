@@ -33,7 +33,6 @@ Things you may want to cover:
 - has_many :users
 
 ## groups_usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -49,7 +48,6 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |message|text|null:|
 |image|image||null:|
-
 ### Association
 - belongs_to :user
 - belongs_to :group
