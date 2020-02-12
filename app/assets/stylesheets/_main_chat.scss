@@ -26,11 +26,14 @@
       border: solid 1px #38aef0;
       padding: 10px 10px 10px 20px;
       margin: 28px 0px;
-      color: #38aef0;
+      
     }
-      a{
+      .edit-btn{
         text-decoration: none;
-      }
+        color: #38aef0;
+      }  
+      
+      
   &__message-list{
     background-color: #fafafa;
     height: calc(100vh - 190px);

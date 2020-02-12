@@ -6,8 +6,9 @@
       .chat-main__member-list
         member : ユーザー名
     .chat-main__edit-box
-      %a(href="#")
+      = link_to "#", class: "edit-btn" do
         Edit
+      
   .chat-main__message-list
     .chat-main__message-info
       .chat-main__uesr-name
