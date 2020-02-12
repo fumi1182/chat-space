@@ -1,0 +1,35 @@
+.chat-main
+  .chat-main__group-header
+    .chat-main__group-info
+      .chat-main__group-name
+        グループ名
+      .chat-main__member-list
+        member : ユーザー名
+    .chat-main__edit-box
+      %a(href="#")
+        Edit
+  .chat-main__message-list
+    .chat-main__message-info
+      .chat-main__uesr-name
+        ユーザー名
+      .chat-main__message-time
+        2020/02/12(wed) 17:42:25
+    .chat-main__message-text
+      おはようございます
+    .chat-main__message-info
+      .chat-main__uesr-name
+        ユーザー名
+      .chat-main__message-time
+        2020/02/12(wed) 17:42:25
+    .chat-main__message-text
+      おはようございます
+  .form
+    %form.new_meessage
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fa', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}  
+    
+        
