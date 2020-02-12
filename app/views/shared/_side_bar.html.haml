@@ -1,0 +1,24 @@
+.side-bar
+  .side-bar__header
+    .side-bar__box
+      .side-bar__user-name
+        p name
+      .side-bar__icon
+        .side-bar__icon__new    
+          = link_to "#", class: "icon-group" do
+            %i.fa.fa-edit
+        .side-bar__icon__edit
+          = link_to "#", class: "icon-group" do
+            %i.fa.fa-cog
+
+  .side-bar__groups
+    .side-bar__group
+      .side-bar__group-name
+        グループ名
+      .side-bar__group-message
+        メッセージ
+    .side-bar__group
+      .side-bar__group-name
+        グループ名
+      .side-bar__group-message
+        メッセージ
