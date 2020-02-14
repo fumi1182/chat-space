@@ -56,3 +56,8 @@ gem 'font-awesome-sass'
 gem "font-awesome-rails"
 gem 'erb2haml'
 gem 'devise'
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end
