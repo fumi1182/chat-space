@@ -18,7 +18,18 @@
           font-size: 11px;
           margin-top: 15px;
           color: #999999;
-      }
+          display: flex
+          ;
+        }
+        &__member-list li {
+          display: list-item;
+          list-style-type: none;
+          text-transform: uppercase;
+          
+          font-size: 11px;
+          display: inline-block
+        } 
+      
     &__edit-box{
       height: 40px;
       width: 72px;
