@@ -2,11 +2,7 @@
   .chat-main__group-header
     .chat-main__group-info
       .chat-main__group-name
-        -# - current_user.groups.each do |group|
-        -#   = group.name　
-        -#　上だとユーザーが所属して居るものが全部消磁される
         = @group.name
-        -#上だと＠でグループを指定して居るのでその名前だけ表示すれば良い
       .chat-main__member-list
         Member：
         %ul
@@ -24,9 +20,11 @@
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
         = f.label :image, class: 'form__mask__image' do
-          = icon('fas', 'image', class: 'icon')
+          = icon('fa', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
     
     
-        
+ 
+    
+  
