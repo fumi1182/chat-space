@@ -1,5 +1,4 @@
 $(function(){ 
-  console.log(last_message_id);
   var buildHTML = function(message) {
     if (message.content && message.image) {
      var html =
