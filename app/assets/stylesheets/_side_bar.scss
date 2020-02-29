@@ -39,12 +39,12 @@
             color: white;
             text-decoration: none;
           }
-    &__groups{
+    &__groups-list{
       background-color: #2f3e52;
       display: block;
       height: calc(100vh - 100px);
       width: 300px;
-      padding: 0px 20px;
+      
     }
       a{
         text-emphasis: none;
