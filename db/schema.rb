@@ -55,4 +55,6 @@ ActiveRecord::Schema.define(version: 20200214070354) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
 end

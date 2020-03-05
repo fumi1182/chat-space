@@ -79,7 +79,6 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      console.log(html)
       $('.chat-main__message-list').append(html);      
       $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
       $('form')[0].reset();
@@ -95,38 +94,38 @@ $(function(){
 
 
   var reloadMessages = function() {
-  var last_message_id = $('.message:last').data("message-id");
-  $.ajax({
-    //ルーティングで設定した通りのURLを指定
-    url: "api/messages",
-    //ルーティングで設定した通りhttpメソッドをgetに指定
-    type: 'get',
-    dataType: 'json',
-    //dataオプションでリクエストに値を含める
-    data: {id: last_message_id}
-  })
-    .done(function(messages){
-      if (messages.length !== 0) {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+    var last_message_id = $('.message:last').data("message-id");
+    $.ajax({
+      //ルーティングで設定した通りのURLを指定
+      url: "api/messages",
+      //ルーティングで設定した通りhttpメソッドをgetに指定
+      type: 'get',
+      dataType: 'json',
+      //dataオプションでリクエストに値を含める
+      data: {id: last_message_id}
+    })
+      .done(function(messages){
+        if (messages.length !== 0) {
 
-        //追加するHTMLの入れ物を作る
-        var insertHTML = '';
-        //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-        $.each(messages, function(i, message) {
-          insertHTML += buildHTML(message)
-        });
-        //メッセージが入ったHTMLに、入れ物ごと追加
-        $('.chat-main__message-list').append(insertHTML);
-        $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
-      }
-    })
-    .fail(function(data) {
-        alert("メッセージ送信に失敗しました。");
-    })
-    .always(function(data){
-      $('.form__submit').prop('disabled', false);　
-    });
-  };
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
+          //追加するHTMLの入れ物を作る
+          var insertHTML = '';
+          //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+          $.each(messages, function(i, message) {
+            insertHTML += buildHTML(message)
+          });
+          //メッセージが入ったHTMLに、入れ物ごと追加
+          $('.chat-main__message-list').append(insertHTML);
+          $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
+        }
+      })
+      .fail(function() {
+          alert("メッセージ送信に失敗しました。");
+      })
+      .always(function(){
+        $('.form__submit').prop('disabled', false);　
+      });
+    };
   }
+  setInterval(reloadMessages, 7000);
 });
